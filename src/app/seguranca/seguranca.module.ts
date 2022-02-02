@@ -1,11 +1,16 @@
+import { environment } from '../environments/environment'
+import { MoneyHttpInterceptor } from './moneyHttpInterceptor';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+
 import { ButtonModule } from 'primeng/button';
-import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
+import { InputTextModule } from 'primeng/inputtext';
+
 import { SegurancaRoutingModule } from './seguranca-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthorizedComponent } from './authorized/authorized.component';
 
 
 export function tokenGetter(): string {
@@ -13,7 +18,6 @@ export function tokenGetter(): string {
 }
 
 @NgModule({
-
   imports: [
     CommonModule,
     FormsModule,
@@ -21,20 +25,26 @@ export function tokenGetter(): string {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        allowedDomains: ['localhost:8080'],
-        disallowedRoutes: ['http://localhost:8080/kaspper/oauth/token']
+        allowedDomains: environment.tokenAllowedDomains,
+        disallowedRoutes: environment.tokenDisallowedRoutes
       }
     }),
 
     InputTextModule,
     ButtonModule,
 
-
-
     SegurancaRoutingModule
   ],
-
-  providers: [JwtHelperService]
-
+  providers: [
+    JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MoneyHttpInterceptor,
+      multi: true
+    }
+  ],
+  declarations: [
+    AuthorizedComponent
+  ]
 })
 export class SegurancaModule { }

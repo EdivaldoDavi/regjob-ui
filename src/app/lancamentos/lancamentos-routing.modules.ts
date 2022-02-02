@@ -9,7 +9,7 @@ const routes: Routes = [
   path: '',
   component: LancamentosPesquisaComponent,
     canActivate: [ AuthGuard ],
-    data: { roles: ['ROLE_PESQUISAR_LANCAMENTO'] }
+    data: { roles: ['ROLE_PESQUISAR_CANDIDATO'] }
   }
   ];
 
