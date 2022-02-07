@@ -1,0 +1,58 @@
+<mat-horizontal-stepper [linear] = "isLinear" #stepper>
+  <mat-step [stepControl] = "firstFormGroup">
+     <form [formGroup] = "firstFormGroup">
+        <ng-template matStepLabel>Nome</ng-template>
+        <mat-form-field>
+           <input matInput placeholder = "Nome Completo" formControlName = "firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+     </form>
+  </mat-step>
+  <mat-step [stepControl] = "secondFormGroup">
+     <form [formGroup] = "secondFormGroup">
+        <ng-template matStepLabel>Endereco</ng-template>
+        <mat-form-field>
+          <input matInput placeholder = "Endereco" formControlName = "secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Anterior</button>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+     </form>
+  </mat-step>
+  <mat-step [stepControl] = "secondFormGroup">
+    <form [formGroup] = "secondFormGroup">
+       <ng-template matStepLabel>Salário</ng-template>
+       <mat-form-field>
+         <input matInput placeholder = "Pretensão salarial" formControlName = "secondCtrl" required>
+       </mat-form-field>
+       <div>
+         <button mat-button matStepperPrevious>Anterior</button>
+         <button mat-button matStepperNext>Próximo</button>
+       </div>
+    </form>
+ </mat-step>  <mat-step [stepControl] = "secondFormGroup">
+  <form [formGroup] = "secondFormGroup">
+     <ng-template matStepLabel>Enter your address</ng-template>
+     <mat-form-field>
+       <input matInput placeholder = "Address" formControlName = "secondCtrl" required>
+     </mat-form-field>
+     <div>
+       <button mat-button matStepperPrevious>Anterior</button>
+       <button mat-button matStepperNext>Próximo</button>
+     </div>
+  </form>
+</mat-step>
+  <mat-step>
+     <ng-template matStepLabel>Done</ng-template>
+        Fim.
+     <div>
+      <button mat-button (click) = "stepper.reset()">Confirma</button>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button (click) = "stepper.reset()">Reiniciar</button>
+
+     </div>
+  </mat-step>
+</mat-horizontal-stepper>

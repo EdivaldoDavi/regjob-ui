@@ -1,4 +1,5 @@
 
+
 import { Routes, RouterModule } from '@angular/router';
 import { SegurancaModule } from './seguranca/seguranca.module';
 import { AppRoutingModule } from './app-routing.modules';
@@ -13,9 +14,14 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { CadastrosModule } from './cadastros/cadastros.module';
 import { CoreModule } from './core/core.module';
 import { TableModule } from 'primeng/table';
-
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 const routes: Routes = [
 
 ];
@@ -28,15 +34,24 @@ const routes: Routes = [
     TabViewModule,
     SegurancaModule,
     RouterModule,
-
     HttpClientModule,
     CoreModule,
+    MatStepperModule,
+    CadastrosModule,
     LancamentosModule,
     ToastModule,
     ConfirmDialogModule,
     BrowserAnimationsModule,
     TableModule,
     AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatStepperModule, MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [ MessageService,   ConfirmationService,],

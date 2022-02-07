@@ -1,3 +1,5 @@
+import { StepsModule } from 'primeng/steps';
+import { ToastModule } from 'primeng/toast';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +22,11 @@ import { LancamentosRoutingModule } from './lancamentos-routing.modules';
     RouterModule,
     SharedModule,
     LancamentosRoutingModule,
+    ToastModule,
+    StepsModule,
     TableModule
+
+
   ],
   declarations: [
 

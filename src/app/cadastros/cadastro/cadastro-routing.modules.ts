@@ -1,13 +1,13 @@
+import { CadastroComponent } from '../cadastro/cadastro.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../seguranca/auth.guard';
-import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
+import { AuthGuard } from '../../seguranca/auth.guard';
 
 
 const routes: Routes = [
   {
-  path: 'pesquisar',
-  component: LancamentosPesquisaComponent,
+  path: '',
+  component: CadastroComponent,
     canActivate: [ AuthGuard ],
     data: { roles: ['ROLE_PESQUISAR_CANDIDATO'] }
   }
@@ -19,4 +19,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
   })
-  export class LancamentosRoutingModule { }
+  export class CadastrosRoutingModule { }
