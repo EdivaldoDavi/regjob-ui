@@ -8,7 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { TicketService }  from '../services/ticketservice';
 import { CandidatosRoutingModule } from '../../app/candidatos/candidatos-routing.modules';
 import { RouterModule } from '@angular/router';
@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
 	],
   imports: [
     CommonModule,
-    FormsModule,
+
     RouterModule,
     SharedModule,
     CandidatosRoutingModule,

@@ -76,7 +76,7 @@ export class CandidatoCadastroComponent implements OnInit {
       .then(candidatoAdicionado => {
         this.messageService.add({ severity: 'success', detail: 'Candidato cadastrado com sucesso!' });
 
-        this.router.navigate(['/candidatos', candidatoAdicionado.codigo]);
+        this.router.navigate(['/candidatos']);
       })
 
       .catch(erro => this.errorHandler.handle(erro));

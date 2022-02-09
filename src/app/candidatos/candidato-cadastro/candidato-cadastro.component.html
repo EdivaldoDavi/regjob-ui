@@ -59,7 +59,7 @@
      <ng-template matStepLabel>Feito</ng-template>
         Fim.
      <div >
-       <button mat-button type="button" (click)="adicionarCandidato();">salvarTeste</button>
+       <button mat-button type="button" (click)="adicionarCandidato();" [disabled]="formulario1.invalid">salvar</button>
        <button mat-button matStepperPrevious>Anterior</button>
         <button mat-button (click) = "stepper.reset()">Reiniciar</button>
 
