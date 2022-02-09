@@ -1,0 +1,70 @@
+
+<mat-horizontal-stepper [linear] = "isLinear" #stepper>
+  <mat-step [stepControl] = "formulario1">
+     <form [formGroup] = "formulario1" #formone="ngForm">
+
+        <ng-template matStepLabel>Nome</ng-template>
+        <mat-form-field>
+           <input matInput placeholder = "Nome Completo" formControlName = "nome" name = "nome" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+     </form>
+  </mat-step>
+  <mat-step [stepControl] = "formulario2">
+     <form [formGroup] = "formulario1" #formone="ngForm">
+        <ng-template matStepLabel>Perfil</ng-template>
+        <mat-form-field>
+            <mat-label>Selecione o Perfil</mat-label>
+            <mat-select   formControlName = "perfil" name="perfil">
+              <mat-option *ngFor="let perfil of perfis" [value]="perfil.value">
+                {{perfil.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious>Anterior</button>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+     </form>
+  </mat-step>
+  <mat-step [stepControl] = "formulario3" >
+    <form [formGroup] = "formulario1"   #formone="ngForm">
+       <ng-template matStepLabel>Salário</ng-template>
+       <mat-form-field>
+         <input matInput placeholder = "Pretensão salarial" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" formControlName = "salario" required>
+       </mat-form-field>
+       <div>
+         <button mat-button matStepperPrevious>Anterior</button>
+         <button mat-button matStepperNext>Próximo</button>
+       </div>
+    </form>
+ </mat-step>
+ <mat-step [stepControl] = "formulario4">
+  <form [formGroup] = "formulario1"  #formone="ngForm">
+     <ng-template matStepLabel>Curriculo</ng-template>
+     <mat-form-field>
+       <input matInput placeholder = "Anexar" formControlName = "anexo" required>
+     </mat-form-field>
+     <div>
+       <button mat-button matStepperPrevious>Anterior</button>
+       <button mat-button matStepperNext>Próximo</button>
+     </div>
+  </form>
+</mat-step>
+  <mat-step >
+
+     <ng-template matStepLabel>Feito</ng-template>
+        Fim.
+     <div >
+       <button mat-button type="button" (click)="adicionarCandidato();">salvarTeste</button>
+       <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button (click) = "stepper.reset()">Reiniciar</button>
+
+     </div>
+  </mat-step>
+
+</mat-horizontal-stepper>
+

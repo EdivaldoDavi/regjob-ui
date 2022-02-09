@@ -1,8 +1,4 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-
-
-import { StepsModule } from 'primeng/steps';
 import { TabViewModule } from 'primeng/tabview';
 
 import { ButtonModule } from 'primeng/button';
@@ -12,19 +8,23 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketService }  from '../services/ticketservice';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CadastrosRoutingModule } from './cadastro/cadastro-routing.modules';
+import { CandidatosRoutingModule } from '../../app/candidatos/candidatos-routing.modules';
 import { RouterModule } from '@angular/router';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { CandidatoCadastroComponent } from './candidato-cadastro/candidato-cadastro.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
-import { ReactiveFormsModule} from '@angular/forms';
+
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
-    CadastroComponent
+    CandidatoCadastroComponent
 
 
   ],
@@ -33,6 +33,11 @@ import {MatButtonModule} from '@angular/material/button';
 	],
   imports: [
     CommonModule,
+    FormsModule,
+    RouterModule,
+    SharedModule,
+    CandidatosRoutingModule,
+    ToastModule,
 	 	TabViewModule,
 		ButtonModule,
 		CardModule,
@@ -40,17 +45,13 @@ import {MatButtonModule} from '@angular/material/button';
 		DropdownModule,
 		InputMaskModule,
 		CheckboxModule,
-		ToastModule,
-		FormsModule,
-    CadastrosRoutingModule,
-    RouterModule,
-    ToastModule,
-    BrowserAnimationsModule,
+
     MatStepperModule, MatInputModule,
     MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    CurrencyMaskModule
 
   ]
 })
-export class CadastrosModule { }
+export class CandidatosModule { }

@@ -8,7 +8,7 @@ import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.compo
 
 const routes: Routes = [
 
-    { path: 'cadastros', loadChildren: () => import('../app/cadastros/cadastros.module').then(m => m.CadastrosModule) },
+    { path: 'candidatos', loadChildren: () => import('../app/candidatos/candidatos.module').then(m => m.CandidatosModule) },
     { path: 'lancamentos', loadChildren: () => import('../app/lancamentos/lancamentos.module').then(m => m.LancamentosModule) },
 
 

@@ -6,7 +6,7 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 
 const routes: Routes = [
   {
-  path: 'pesquisar',
+  path: '',
   component: LancamentosPesquisaComponent,
     canActivate: [ AuthGuard ],
     data: { roles: ['ROLE_PESQUISAR_CANDIDATO'] }
