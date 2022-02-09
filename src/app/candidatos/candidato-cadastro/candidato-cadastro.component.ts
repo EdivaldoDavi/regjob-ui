@@ -43,6 +43,16 @@ export class CandidatoCadastroComponent implements OnInit {
   ngOnInit() {
    this.configForm();
   }
+  novo() {
+    this.formulario1.reset();
+
+    setTimeout(() => {
+      this.candidato = new Candidato();
+    }, 1);
+
+    this.router.navigate(['/Candidatos']);
+  }
+
   configForm(){
 
     this.formulario1 = this._formBuilder.group({
@@ -61,6 +71,7 @@ export class CandidatoCadastroComponent implements OnInit {
   get editando(){
     return Boolean(this.formulario1.get('codigo'))
   }
+
   salvar() {
     if (this.editando) {
       this.atualizarCandidato()
