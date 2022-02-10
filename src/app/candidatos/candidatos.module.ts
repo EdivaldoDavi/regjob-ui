@@ -9,7 +9,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
 import {  ReactiveFormsModule } from '@angular/forms';
-import { TicketService }  from '../services/ticketservice';
+
 import { CandidatosRoutingModule } from '../../app/candidatos/candidatos-routing.modules';
 import { RouterModule } from '@angular/router';
 import { CandidatoCadastroComponent } from './candidato-cadastro/candidato-cadastro.component';
@@ -23,20 +23,23 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 
 
+
 @NgModule({
   declarations: [
-    CandidatoCadastroComponent
+    CandidatoCadastroComponent,
+
+
 
 
   ],
  	providers: [
-		TicketService
+
 	],
   imports: [
     CommonModule,
 
     RouterModule,
-    SharedModule,
+
     CandidatosRoutingModule,
     ToastModule,
 	 	TabViewModule,
@@ -47,12 +50,13 @@ import { CommonModule } from '@angular/common';
 		InputMaskModule,
 		CheckboxModule,
 
+
     MatStepperModule, MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
     MatSelectModule,
-    CurrencyMaskModule
-
+    CurrencyMaskModule,
+    SharedModule
 
   ]
 })

@@ -5,8 +5,9 @@ import { MessageService } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CandidatoService } from '../candidato.service';
 import { Candidato } from '../../core/model';
-
-
+import { Observable } from 'rxjs';
+import { FileuploadComponent } from 'src/app/shared/fileupload/fileupload.component';
+import { HttpClient, HttpRequest, HttpEvent } from '@angular/common/http';
 /**
  * @title Stepper with editable steps
  */
@@ -35,13 +36,16 @@ export class CandidatoCadastroComponent implements OnInit {
     {value: '1',viewValue: 'JUNIOR' },
     {value: '2',viewValue: 'SENIOR'},
   ];
+  private baseUrl = 'http://localhost:8080';
   constructor(
     private _formBuilder: FormBuilder,
     private candidatoService: CandidatoService,
     private messageService: MessageService,
     private errorHandler: ErrorHandlerService,
+    private http: HttpClient,
     private router: Router
     ) {}
+
 
   ngOnInit() {
    this.configForm();

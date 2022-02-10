@@ -17,7 +17,6 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-
 registerLocaleData(localePt, 'pt-BR');
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -29,6 +28,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     PaginaNaoEncontradaComponent,
      NavbarComponent
+
+
   ],
   imports: [
     CommonModule,
@@ -36,8 +37,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     ToastModule,
     ConfirmDialogModule,
-
-
 
     TranslateModule.forRoot({
       loader: {
@@ -51,6 +50,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ToastModule,
     ConfirmDialogModule,
     NavbarComponent
+
 
   ],
   providers: [

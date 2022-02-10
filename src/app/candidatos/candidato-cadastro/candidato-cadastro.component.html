@@ -45,9 +45,10 @@
  <mat-step [stepControl] = "formulario4">
   <form [formGroup] = "formulario1"  #formone="ngForm">
      <ng-template matStepLabel>Curriculo</ng-template>
-     <mat-form-field>
-       <input matInput placeholder = "Anexar" formControlName = "anexo" required>
-     </mat-form-field>
+
+      <app-fileupload></app-fileupload>
+
+
      <div>
        <button mat-button matStepperPrevious>Anterior</button>
        <button mat-button matStepperNext>Próximo</button>
