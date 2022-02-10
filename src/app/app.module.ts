@@ -13,6 +13,7 @@ import { CandidatosModule } from './candidatos/candidatos.module';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule} from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 const routes: Routes = [
 
 ];
@@ -31,7 +32,8 @@ const routes: Routes = [
     LancamentosModule,
     AppRoutingModule,
     DropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFileUploadModule
 
   ],
   providers: [ MessageService,   ConfirmationService,],

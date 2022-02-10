@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CandidatoService } from '../candidato.service';
 import { Candidato } from '../../core/model';
+
 
 /**
  * @title Stepper with editable steps
@@ -24,6 +25,8 @@ export class CandidatoCadastroComponent implements OnInit {
   formulario2!: FormGroup;
   formulario3!: FormGroup;
   formulario4!: FormGroup;
+
+
 
   isLinear = false;
   selectedValue!: string;

@@ -22,6 +22,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     CandidatoCadastroComponent
@@ -51,6 +52,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     MatSelectModule,
     CurrencyMaskModule
+
 
   ]
 })
