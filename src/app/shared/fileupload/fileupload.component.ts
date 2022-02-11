@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FileUploadService } from '../../services/file-upload.services';;
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-fileupload',
   templateUrl: './fileupload.component.html',
@@ -11,7 +12,7 @@ export class FileuploadComponent implements OnInit {
   currentFile?: File;
   progress = 0;
   message = '';
-  fileName = 'Select File';
+  fileName = 'clique aqui e selecione seu curriculo em pdf';
   fileInfos?: Observable<any>;
   constructor(private uploadService: FileUploadService) { }
 
@@ -26,7 +27,7 @@ export class FileuploadComponent implements OnInit {
       this.fileName = this.currentFile.name;
     } else {
 
-      this.fileName = 'Select File';
+      this.fileName = '';
     }
   }
   upload(): void {

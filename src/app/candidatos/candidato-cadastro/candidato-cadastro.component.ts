@@ -66,7 +66,7 @@ export class CandidatoCadastroComponent implements OnInit {
       nome: ['', Validators.required],
      perfil: ["", Validators.required],
      salario:["",Validators.required],
-     anexo: []
+     anexo: [""]
 
     });
 
