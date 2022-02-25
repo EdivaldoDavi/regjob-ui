@@ -11,15 +11,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { CandidatosModule } from './candidatos/candidatos.module';
 import { CoreModule } from './core/core.module';
-import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { MatFileUploadModule } from 'angular-material-fileupload';
+import { TesteModule } from './teste/teste.module';
+
+
 const routes: Routes = [
 
 ];
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
 
@@ -28,6 +32,8 @@ const routes: Routes = [
     RouterModule,
     HttpClientModule,
     CoreModule,
+    FormsModule,
+    TesteModule,
     CandidatosModule,
     LancamentosModule,
     AppRoutingModule,

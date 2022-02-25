@@ -1,17 +1,18 @@
-import { CandidatoCadastroComponent } from './candidato-cadastro/candidato-cadastro.component';
+import  { CandidatoVagaComponent } from './candidato-vaga/candidato-vaga.component'
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../seguranca/auth.guard';
-import { CandidatoVagaComponent } from './candidato-vaga/candidato-vaga.component';
+
+
 
 const routes: Routes = [
   {
-  path: '',
-  component: CandidatoCadastroComponent,
+  path: 'candidatoVaga/:id',
+  component: CandidatoVagaComponent,
     canActivate: [ AuthGuard ],
     data: { roles: ['ROLE_CADASTRAR_CANDIDATO'] }
   },
- 
+
   ];
 
   @NgModule({
@@ -20,4 +21,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
   })
-  export class CandidatosRoutingModule { }
+  export class CandidatoVagaRoutingModule { }

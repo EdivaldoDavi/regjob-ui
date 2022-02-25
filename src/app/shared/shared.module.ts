@@ -16,7 +16,12 @@ import { MatListModule } from '@angular/material/list';
     FileuploadComponent
 
   ],
-  exports: [MessageComponent, FileuploadComponent],
+  exports: [MessageComponent, FileuploadComponent,    MatProgressBarModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatListModule,
+    MatInputModule],
   imports: [
     CommonModule,
     MatProgressBarModule,

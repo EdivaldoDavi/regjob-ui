@@ -1,4 +1,9 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TesteComponent } from './teste/teste.component';
+import { RouterModule } from '@angular/router';
+import { TesteRoutingModule } from './teste-routing.modules';
+
 import { TabViewModule } from 'primeng/tabview';
 
 import { ButtonModule } from 'primeng/button';
@@ -8,11 +13,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
-import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 
-import { CandidatosRoutingModule } from '../../app/candidatos/candidatos-routing.modules';
-import { RouterModule } from '@angular/router';
-import { CandidatoCadastroComponent } from './candidato-cadastro/candidato-cadastro.component';
+
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 
@@ -20,28 +23,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { SharedModule } from '../shared/shared.module';
-import { CommonModule } from '@angular/common';
-import {MatAutocompleteModule} from '@angular/material/autocomplete'
-import { TesteModule } from '../teste/teste.module';
-import { CandidatoVagaComponent } from './candidato-vaga/candidato-vaga.component';
-import { CandidatoVagaRoutingModule } from './candidatoVaga-routing.modules';
 
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
 
 @NgModule({
   declarations: [
-    CandidatoCadastroComponent,
-    CandidatoVagaComponent,
+    TesteComponent
   ],
- 	providers: [
-
-	],
   imports: [
     CommonModule,
-
     RouterModule,
-    CandidatoVagaRoutingModule,
-    CandidatosRoutingModule,
-    FormsModule,
+    TesteRoutingModule,
     ToastModule,
 	 	TabViewModule,
 		ButtonModule,
@@ -51,7 +43,7 @@ import { CandidatoVagaRoutingModule } from './candidatoVaga-routing.modules';
 		InputMaskModule,
 		CheckboxModule,
     MatAutocompleteModule,
-    TesteModule,
+
     MatStepperModule, MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
@@ -59,6 +51,7 @@ import { CandidatoVagaRoutingModule } from './candidatoVaga-routing.modules';
     CurrencyMaskModule,
     SharedModule
 
-  ]
+  ],
+  exports:[TesteComponent]
 })
-export class CandidatosModule { }
+export class TesteModule { }

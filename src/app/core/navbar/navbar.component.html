@@ -11,10 +11,13 @@
   <ul class="navbar-menu" [hidden]="!exibindoMenu">
     <li class="navbar-usuario">{{ usuarioLogado }}</li>
     <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_CADASTRAR_CANDIDATO')">
+      <a routerLink="/teste">Teste</a>
+    </li>
+    <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_CADASTRAR_CANDIDATO')">
       <a routerLink="/candidatos">Cadastro</a>
     </li>
     <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="temPermissao('ROLE_CADASTRAR_CANDIDATO')">
-      <a routerLink="/lancamentos">Lançamentos</a>
+      <a routerLink="/candidatoVaga">Vagas</a>
     </li>
     <li class="navbar-menuitem" routerLinkActive="ativo" *ngIf="temPermissao('ROLE_PESQUISAR_PESSOA')">
       <a routerLink="/pessoas">Pessoas</a>

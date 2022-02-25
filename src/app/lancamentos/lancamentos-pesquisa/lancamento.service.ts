@@ -12,10 +12,8 @@ export class LancamentoService {
 
   constructor(private http: HttpClient) { }
   listarTodas() : Promise<any> {
-    const headers = new HttpHeaders()
-      .append('Authorization', 'Basic YW5ndWxhcjpAbmd1bEBy');
 
-    return this.http.get(this.lancamentosUrl, { headers })
+    return this.http.get(this.lancamentosUrl)
       .toPromise()
       .then((response: any) => response['content']);
   }
