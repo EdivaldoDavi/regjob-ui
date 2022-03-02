@@ -41,7 +41,7 @@ import { CandidatoVagaRoutingModule } from './candidatoVaga-routing.modules';
     RouterModule,
     CandidatoVagaRoutingModule,
     CandidatosRoutingModule,
-    FormsModule,
+
     ToastModule,
 	 	TabViewModule,
 		ButtonModule,

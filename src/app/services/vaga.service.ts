@@ -5,7 +5,7 @@ import { tap } from 'rxjs/operators';
 
 export interface Vaga {
 
-  id: string;
+  id: number;
  descricao: string;
 }
 @Injectable({

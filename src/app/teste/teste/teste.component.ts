@@ -21,6 +21,8 @@ export class TesteComponent implements OnInit {
 
   @Input() valor: any = "";
   @Output() mudouValor = new EventEmitter;
+  @Output() mudouOption = new EventEmitter;
+  @Input() opt: any = "";
   incrementa(){
     this.valor++;
     this.mudouValor.emit({novoValor: this.valor});
@@ -35,7 +37,8 @@ export class TesteComponent implements OnInit {
   myControl! : FormGroup;
  //options: VagaBusca[] = [{descricao: 'Mary'}, {descricao: 'Shelley'}, {descricao: 'Igor'}];
  options: Vaga[] = [];
-  filteredOptions!: Observable<Vaga[]>;
+  codigoVaga!: number ;
+ @Output() filteredOptions!: Observable<Vaga[]>;
   @Input() vagaTeste!: any;
   constructor(
     private http: HttpClient,
@@ -63,8 +66,11 @@ export class TesteComponent implements OnInit {
     displayFn(options: Vaga[]): (id: number) => string {
     return (id: number) => {
       const correspondingOption = Array.isArray(options) ? options.find(option => option.id === id) : null;
+      this.mudouOption.emit( id);
       return correspondingOption ? correspondingOption.descricao : '';
+
     }
+
   }
 
  // displayFn(vaga: Vaga): string {
@@ -74,6 +80,7 @@ export class TesteComponent implements OnInit {
 
   private _filter(descricao: string): Vaga[] {
     const filterValue = descricao;
+
     return this.options.filter(option => option.descricao.toLowerCase().includes(filterValue));
   }
 

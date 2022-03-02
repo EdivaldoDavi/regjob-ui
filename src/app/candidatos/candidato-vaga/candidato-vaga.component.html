@@ -1,5 +1,15 @@
+<div class="container">
+  <h1>Selecione a vaga pretendida</h1>
+  <app-teste  type="number" [valor]="valorInicial" (mudouValor)="onMudouValor($event)" (mudouOption)="onMudouOption($event)"  ></app-teste>
+  <form [formGroup]="contactForm">
+<div formGroupName="vaga" >
+  <mat-form-field>
+    <input matInput placeholder = "Pretensão salarial para vaga" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" formControlName = "salario" required>
+  </mat-form-field>
 
-
-<div class="container" >
-<app-teste  type="number" [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></app-teste>
+<input  formControlName="id"  type="hidden" [value]="mudouOption"  [(ngModel)]="mudouOption"  (blur)="valuechange($event)" (blur)= "campoInput.value" #campoInput>
+</div>
+  <button mat-button type="button"  (click)="adicionarCandidatoVaga(); "  >salvar</button>
+  <button mat-button type="button"  (click)="cancelar(); "  >Cancelar</button>
+</form>
 </div>

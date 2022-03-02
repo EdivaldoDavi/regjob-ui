@@ -32,8 +32,8 @@ const routes: Routes = [
     RouterModule,
     HttpClientModule,
     CoreModule,
-    FormsModule,
-    TesteModule,
+
+
     CandidatosModule,
     LancamentosModule,
     AppRoutingModule,
