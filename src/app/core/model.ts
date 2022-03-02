@@ -16,8 +16,9 @@ export class Vaga {
 
 }
 export class CandidatoVaga {
-
+  id? :number;
   candidato = new Candidato();
   vaga = new Vaga();
+  vagaSalario: number | undefined;
 
 }

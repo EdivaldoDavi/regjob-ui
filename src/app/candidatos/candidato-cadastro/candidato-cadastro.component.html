@@ -29,7 +29,7 @@
 
        <ng-template matStepLabel>Salário</ng-template>
        <mat-form-field>
-         <input matInput placeholder = "Pretensão salarial" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" formControlName = "salario" required>
+         <input matInput placeholder = "Pretensão salarial" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" formControlName = "salario"  name = "salario"  required>
        </mat-form-field>
        <div>
          <button mat-button matStepperPrevious>Anterior</button>

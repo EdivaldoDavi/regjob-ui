@@ -2,7 +2,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { Candidato } from './../../core/model';
 
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-import { FormGroup ,FormBuilder, FormControl} from '@angular/forms';
+import { FormGroup ,FormBuilder, FormControl, Validators} from '@angular/forms';
 import { CandidatoVagaService } from '../candidato-vaga.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { MessageService } from 'primeng/api';
@@ -73,7 +73,7 @@ text: string ='';
        candidato: new FormGroup({
         id: new FormControl(this.codigo)
        }),
-
+       vagaSalario:new FormControl("", Validators.required)
 
     });
   }
