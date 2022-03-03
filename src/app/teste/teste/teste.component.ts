@@ -6,10 +6,13 @@ import {map, startWith} from 'rxjs/operators';
 
 import { VagaService } from 'src/app/services/vaga.service';
 
+
 export interface Vaga {
   id: number,
   descricao: string;
+  tipo: string;
 }
+
 
 @Component({
   selector: 'app-teste',
@@ -34,6 +37,7 @@ export class TesteComponent implements OnInit {
 
 
 
+
   myControl! : FormGroup;
  //options: VagaBusca[] = [{descricao: 'Mary'}, {descricao: 'Shelley'}, {descricao: 'Igor'}];
  options: Vaga[] = [];
@@ -52,13 +56,14 @@ export class TesteComponent implements OnInit {
 
     this.myControl = this.fb.group({
      id: [],
-      descricao : ['']
+      descricao : [''],
+      tipo: ['']
     })
     this.service.list().subscribe(dados => this.options = dados);
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
 
-       map(value => (typeof value === 'string' ? value : value.descricao)),
+       map(value => (typeof value === 'string' ? value : value.tipo )),
       map(descricao => (descricao ? this._filter(descricao) : this.options.slice())),
 
     );
@@ -67,7 +72,7 @@ export class TesteComponent implements OnInit {
     return (id: number) => {
       const correspondingOption = Array.isArray(options) ? options.find(option => option.id === id) : null;
       this.mudouOption.emit( id);
-      return correspondingOption ? correspondingOption.descricao : '';
+      return correspondingOption ? correspondingOption.descricao+" - "+ correspondingOption.tipo : '';
 
     }
 

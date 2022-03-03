@@ -54,8 +54,8 @@ export class CandidatoCadastroComponent implements OnInit {
 
 
    perfis : Perfil[] = [
-    {value: '0',viewValue: 'PLENO'},
-    {value: '1',viewValue: 'JUNIOR' },
+    {value: '0',viewValue: 'JUNIOR' },
+    {value: '1',viewValue: 'PLENO'},
     {value: '2',viewValue: 'SENIOR'},
   ];
   private baseUrl = 'http://localhost:8080';

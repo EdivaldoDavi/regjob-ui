@@ -4,7 +4,7 @@
     <input type="text" matInput   formControlName="descricao"  [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn(options)">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option.id">
-        {{option.descricao}}
+        {{option.descricao+" - "+option.tipo}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
